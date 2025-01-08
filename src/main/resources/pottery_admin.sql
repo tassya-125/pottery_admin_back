@@ -14,7 +14,6 @@ CREATE TABLE  IF NOT EXISTS pottery (
     production_time DATE,                    -- 生产时间
     craftsmanship_process TEXT,              -- 工艺流程
     image_url VARCHAR(255),                  -- 图片（可以存放图片路径或URL）
-    production_process TEXT                 -- 生产流程（文本描述）
     );
 CREATE TABLE  IF NOT EXISTS production_process (
                                                    id INT AUTO_INCREMENT PRIMARY KEY,       -- 生产流程ID
@@ -51,9 +50,9 @@ VALUES
 -- 2. 插入紫砂壶数据
 INSERT INTO pottery (uid, creator, origin, production_time, craftsmanship_process, image_url, production_process)
 VALUES
-    ('POT12345', 'Li Ming', 'Jingdezhen', '2023-05-01', 'Handcrafted, Fired in Kiln', 'http://example.com/pot1.jpg', 'Crafting -> Firing -> Inspection'),
-    ('POT12346', 'Wang Wei', 'Yixing', '2023-06-01', 'Handcrafted, Fired in Kiln', 'http://example.com/pot2.jpg', 'Crafting -> Firing -> Inspection'),
-    ('POT12347', 'Zhang San', 'Anji', '2023-07-01', 'Handcrafted, Fired in Kiln', 'http://example.com/pot3.jpg', 'Crafting -> Firing -> Inspection');
+    ('POT12345', 'Li Ming', 'Jingdezhen', '2023-05-01', 'Handcrafted, Fired in Kiln', 'http://example.com/pot1.jpg'  ),
+    ('POT12346', 'Wang Wei', 'Yixing', '2023-06-01', 'Handcrafted, Fired in Kiln', 'http://example.com/pot2.jpg' ,
+    ('POT12347', 'Zhang San', 'Anji', '2023-07-01', 'Handcrafted, Fired in Kiln', 'http://example.com/pot3.jpg' );
 
 -- 3. 插入生产流程数据
 INSERT INTO production_process (process_name, inspection_result, quality_certification, pottery_uid)
